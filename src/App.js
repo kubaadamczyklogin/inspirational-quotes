@@ -4,7 +4,8 @@ import {gql, useQuery } from '@apollo/client';
 export default function App() {
   return (
     <div className="App">
-      <h1>Inspirujące cytaty</h1>
+      <h1>Random inspirational quote</h1>
+      <h2>For my belowed wife Iwona A.</h2>
       <QuoteFromGql />
     </div>
   );

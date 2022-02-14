@@ -5,7 +5,7 @@ export default function App() {
   return (
     <div className="App">
       <h1>Random inspirational quote</h1>
-      <h2>For my belowed wife Iwona A.</h2>
+      <h2>For my beloved wife Iwona A.</h2>
       <QuoteFromGql />
     </div>
   );

@@ -25,3 +25,22 @@ blockquote footer {
 blockquote footer:before {
   content: "\2015";
 }
+
+button {
+  background-color: #555555;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  opacity: 1;
+  transition-duration: 0.1s;
+  curcor: pointer;
+}
+
+button:hover {
+  opacity: 0.5;
+}

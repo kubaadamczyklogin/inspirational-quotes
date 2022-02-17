@@ -13,7 +13,7 @@ export default function App() {
 
 const randomQuote = gql`
   query getQuote {
-    randomQuote {
+    randomQuote {      
       text
       author
     }
@@ -21,13 +21,29 @@ const randomQuote = gql`
 `;
 
 function QuoteFromGql() {
-  const {data, loading} = useQuery(randomQuote);
+  const {data, loading, error, refetch} = useQuery(randomQuote, {
+    onError: error => {
+      console.log(error);
+      console.log(error.message)
+    },
+    errorPolicy: 'all'
+  });
   if(loading){
     return "Quote i loading..";
   }
+  if(error){
+    return 'Could not render quote, but "Silence is golden"';
+  }
+
   const {text, author } = data.randomQuote;
 
-  return <Quote text={text} author={author} />
+  return (
+    <>
+      <Quote text={text} author={author} />
+      <button onClick={()=>refetch()}>Get another quote</button>
+    </>
+  )
+  
 }
 
 function Quote({ text, author }) {

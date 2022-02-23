@@ -6,7 +6,7 @@ export default function App() {
     <div className="App">
       <h1>Random inspirational quote</h1>
       <h2>For my beloved wife Iwona A.</h2>
-      <QuoteFromGql />
+      <QuoteFromGql />    
     </div>
   );
 }
@@ -21,13 +21,7 @@ const randomQuote = gql`
 `;
 
 function QuoteFromGql() {
-  const {data, loading, error, refetch} = useQuery(randomQuote, {
-    onError: error => {
-      console.log(error);
-      console.log(error.message)
-    },
-    errorPolicy: 'all'
-  });
+  const {data, loading, error, refetch} = useQuery(randomQuote);
   if(loading){
     return "Quote i loading..";
   }

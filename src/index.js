@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ApolloClient, InMemoryCache, HttpLink, ApolloProvider } from '@apollo/client';
-import App from './App';
+import App from './components/App';
 
 const Url = "https://examples.devmastery.pl/random-stuff/graphql";
 
@@ -16,7 +16,7 @@ ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
       <App />
-    </ApolloProvider>    
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
